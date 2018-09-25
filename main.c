@@ -1,12 +1,36 @@
 #include <stdio.h>
+#include <time.h>
 
+static void redrawPrompt(void);
+static void fetchDEFCON(void);
+int defLevel;
+int x;
 
 int main() {
-	// Set the peacetime level
-	int defLevel = 5;
 	
 	// Variable to store the level fetched from the internet
-	int fetch;
+	
+	const int trigger = (CLOCKS_PER_SEC * 500) / 1000; // 500 ms in clocks
+	clock_t	prevClock = clock() - trigger;
+	
+	while (defLevel != 1 || defLevel != 2 || defLevel != 3 || defLevel != 4 || defLevel != 5) {
+		clock_t curClock = clock();
+
+		if (curClock - prevClock >= trigger) {
+			prevClock = curClock;
+			redrawPrompt();
+		}
+		fetchDEFCON();
+	}
+	/* int x;
+	printf("Waiting for connection");
+	do {
+		printf(". ");
+		scanf("%d", &x);
+		fetch = x;
+		defLevel = fetch;
+	} while( x != 1 || x != 2 || x != 3 || x !=4 || x != 5 );
+*/
 	
 	/*
 		#######################
@@ -103,3 +127,23 @@ int main() {
 	// Good etiquette :^)
 	return 0;
 }
+
+static void redrawPrompt(void){
+        static int numDots;
+        const int maxDots = 4;
+        const char prompt[] = "Waiting for connection";
+
+        printf("\r%*s\r%s", sizeof(prompt) - 1 + maxDots, "", prompt);
+        for (int i = 0; i < numDots; i++)
+                fputc('.', stdout);
+        fflush(stdout);
+        if (++numDots > maxDots)
+                numDots = 0;
+}
+
+static void fetchDEFCON(void) {
+
+        scanf("%d", &x);
+        defLevel = x;
+}
+

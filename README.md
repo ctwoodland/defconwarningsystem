@@ -49,4 +49,23 @@ sudo cp YOUR_NEW_FILE /usr/local/bin/
 
 You should now be able to run the program by entering your chosen filename into the shell.
 ```bash
+user@yourComputerName defconwarningsystem % defcon
+Retrieving data from server....
 
+######## BEGIN MESSAGE ########
+
+
+
+This is the ☢ DEFCON Warning System.
+
+Condition GREEN. DEFCON 5.
+
+There are no known imminent nuclear threats against the United States.
+
+Visit http://www.defconwarningsystem.com for details.
+
+Twitter updates: @DEFCONWSAlerts
+
+
+
+######### END MESSAGE #########

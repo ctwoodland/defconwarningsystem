@@ -1,7 +1,7 @@
 # DEFCON Warning System CLI
 A simple CLI application written in C. Fetches the current alert level assigned by Thomas Lonely Wolf.
 
-#### DISCLAIMER: I am not affiliated nor do I necessarily agree with [The DEFCON Warning System](defconwarningsystem.com). This tool is being developed as a project to benefit anyone who might derive use out of it.
+#### DISCLAIMER: I am not affiliated nor do I necessarily endorse [The DEFCON Warning System](defconwarningsystem.com). This tool is being developed as a project to benefit anyone who might derive use out of it.
 
 Taken from their website:
 

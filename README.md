@@ -1,5 +1,5 @@
 # DEFCON Warning System CLI
-A simple CLI application written in C. Fetches the current DEFCON level assigned by hobbyist Thomas Lonely Wolf.
+A simple CLI application written in C. Fetches the current alert level assigned by Thomas Lonely Wolf.
 
 #### DISCLAIMER: I am not affiliated nor do I necessarily agree with [The DEFCON Warning System](defconwarningsystem.com). This tool is being developed as a project to benefit anyone who might derive use out of it.
 
@@ -31,7 +31,22 @@ Install `gcc`
   brew install gcc
   ```
 __________
+This tool depends on `wget`. If not installed, install using above methods.
+Clone this repo to your local system:
+```bash
+git clone https://github.com/ctwoodland/defconwarningsystem
+cd defconwarningsystem
+```
 Run the following command to compile `main.c` into an executable
 ```bash
-gcc PATH_TO_main.c -o YOUR_NEW_FILE
+gcc main.c -o YOUR_NEW_FILE
 ```
+
+From here you can copy whatever you named `YOUR_NEW_FILE` (I would recommend `defcon`) to your locally-compiled executable directory (usually /usr/local/bin/)
+```bash 
+sudo cp YOUR_NEW_FILE /usr/local/bin/
+```
+
+You should now be able to run the program by entering your chosen filename into the shell.
+```bash
+
